@@ -14,5 +14,9 @@ int main(){
     //     int length = getLineLength(in,MAXLEN);
     //     printf("input length: %d\n",length);
     // }
-    printMaxLine();
+    // printMaxLine();
+    {
+        char *in = "  hello  ";
+        printf("%s\n",trim(in));
+    }
 }

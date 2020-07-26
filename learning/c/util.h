@@ -3,4 +3,5 @@
     void printMaxLine();
     void printBit(int num);
     void reverse(char *str);
+    char * trim(char *str);
 #endif

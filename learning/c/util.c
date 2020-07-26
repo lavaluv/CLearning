@@ -34,6 +34,7 @@ void printBit(int in){
     reverse(out);
     printf("The hex string is: %s\n",out);
 }
+//翻转字符串
 void reverse(char *str){
     char temp;
     size_t i = 0,j = strlen(str) - 1;
@@ -43,4 +44,28 @@ void reverse(char *str){
         str[j] = str[i];
         str[i] = temp;
     }
+}
+//去除字符串头尾的空格，制表符和换行符
+char * trim(char *str){
+    int head = 0,tail = 0;
+    size_t i = 0,j = 0;
+    for (; i < strlen(str); i++)
+    {
+        if (str[i] != ' ' && str[i] != '\n' && str[i] != '\t')
+        {
+            head = i;
+            break;
+        }
+    }
+    for (j = strlen(str) - 1; j >= i; j--)
+    {
+        if (str[j] != ' ' && str[j] != '\t' && str[j] != '\n')
+        {
+            tail = j;
+            break;
+        }
+    }
+    char *out = (char *) malloc(sizeof(char)*(tail - head + 1));
+    strncpy(out, str+head, tail - head + 1);
+    return out;
 }
