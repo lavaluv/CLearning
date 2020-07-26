@@ -7,6 +7,8 @@
     其中short int可缩写为short，long int可缩写为long
     char是否有负值取决于具体机器实现
 */
+enum myEnum {ONE = 1, TWO, THREE};
+typedef enum myEnum e;
 int main(int argc, char *argv[]){
     printf("The number of bits in a byte %d\n", CHAR_BIT);
 
@@ -38,4 +40,6 @@ int main(int argc, char *argv[]){
 
     printf("The minimum value of DOUBLE = %lf\n", DBL_MIN);
     printf("The maximum value of DOUBLE = %lf\n", DBL_MAX);
+
+    printf("myEnum is %d,%d,%d",ONE,TWO,THREE);
 }
