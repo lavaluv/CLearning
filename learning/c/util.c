@@ -65,6 +65,7 @@ char * trim(char *str){
             break;
         }
     }
+    //ptr handle
     char *out = (char *) malloc(sizeof(char)*(tail - head + 1));
     strncpy(out, str+head, tail - head + 1);
     return out;
