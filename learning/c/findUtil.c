@@ -3,7 +3,7 @@
 /*
 
 */
-int halfFind(int *in,int len,int pattern){
+int halfFind(FIND_INPUT_TYPE *in,int len,int pattern){
     int head = 0,index;
     len--;
     while(head <= len){

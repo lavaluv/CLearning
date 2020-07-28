@@ -28,12 +28,12 @@ int main(){
     //.   free(out);
     //}
     {
-        int in[5] =                                                              {4,2,9,7,0};
+        char in[5] = "hello";
         int len = sizeof(in)/sizeof(in[0]);
         //bubbleSort(in,len);
         selectSort(in,len);
         for (int i = 0;i < 5;i++){
-            printf("%d ",in[i]);
+            printf("%c ",in[i]);
         }
         printf("The index is:%d\n",halfFind(in,len,9));
     }

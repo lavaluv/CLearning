@@ -6,7 +6,7 @@
 void qsort(int in[],int left,int right){
 
 }
-void bubbleSort(int in[],int len){
+void bubbleSort(SORT_INPUT_TYPE in[],int len){
     int index,temp;
     for(int i = 0;i < len; i++){
         index = i;
@@ -20,7 +20,7 @@ void bubbleSort(int in[],int len){
         in[i] = temp;        
     }    
 }
-void selectSort(int in[],int len){
+void selectSort(SORT_INPUT_TYPE in[],int len){
     int temp,isSwap = 0;
     for(int i = 0;i < len;i++){
         isSwap = 0;
