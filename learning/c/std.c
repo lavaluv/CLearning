@@ -75,7 +75,7 @@ int main(int argc, char *argv[]){
             fprintf(stderr,"%s failed to open %n",prog,"test.txt");
             exit(1);
         }
-        fp = fopen("testa.txt","r");
+        fp = fopen("test.txt","r");
         if(fp != NULL){
             while((c = getc(fp)) != EOF){
             putc(c,stdout);

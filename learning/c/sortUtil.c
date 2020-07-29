@@ -3,8 +3,30 @@
 /*
 
 */
-void qsort(int in[],int left,int right){
-
+void qsort(SORT_INPUT_TYPE in[],int left,int right){
+    int getqIndex(int[],int,int);
+    int key = in[left],index = left;
+    if(left >= right){
+        return; 
+    }
+    key = getqIndex(in,left,right);
+    getqIndex(in,key + 1,right);
+    getqIndex(in,left,key - 1);
+}
+int getqIndex(int in[],int left,int right){
+    int key = in[left];
+    while(left < right){
+        while(key < in[right] && left < right){
+            right--;
+        }
+        in[left] = in[right];
+        while(key > in[left] && left < right){
+            left++;
+        }
+        in[right] = in[left];
+    }
+    in[left] = key;
+    return left;
 }
 void bubbleSort(SORT_INPUT_TYPE in[],int len){
     int index,temp;
