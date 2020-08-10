@@ -2,11 +2,12 @@
 #include <limits.h>
 #include <float.h>
 /*
-    鍩烘湰鏁版嵁绫诲瀷鏈夛細char,int,float,double
-    淇グ绗︽湁锛歴hort,long,unsigned,signed
-    鍏朵腑short int鍙缉鍐欎负short锛宭ong int鍙缉鍐欎负long
-    char鏄惁鏈夎礋鍊煎彇鍐充簬鍏蜂綋鏈哄櫒瀹炵幇
+    基本数据类型有：char,int,float,double
+    修饰符有：short,long,unsigned,signed
+    其中short int可缩写为short，long int可缩写为long
+    char是否有负值取决于具体机器实现
 */
+//asd
 enum myEnum {ONE = 1, TWO, THREE};
 typedef enum myEnum e;
 int main(int argc, char *argv[]){

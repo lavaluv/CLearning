@@ -9,7 +9,7 @@
     int putc(int c,File *fp):output c to fp and return
     c.
     char * gets(char *in)/int puts(char *out):read/write
-    line;read delete ‘\n’;write add ‘\n’
+    line;read delete ‘\n�?;write add ‘\n�?
 
     int getchar(void)/#define getchar(FILE *fp) getc(stdin):
     read a char from std input;
@@ -36,8 +36,8 @@
 
     FILE * fopen(char *filename,char *mode):open file,
     reaturn FILE ptr,include buffer/buffer index/status/
-    error/EOF etc. Mode include “r”read,”w”write,”a”add,
-    ”b”binary
+    error/EOF etc. Mode include 'r'read,'w'write,'a'add,
+    'b'binary
     int fopen(FILE *)/int fclose(FILE *)/int ferror(FILE *)
     int feof(FILE *):FILE statuts control
     char *fgets(char * line,int maxLine,FILE * fp):read line

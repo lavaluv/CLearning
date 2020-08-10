@@ -1,10 +1,10 @@
 #include "inAndOut.h"
 /*
-    è·å–è¾“å…¥æµçš„ä¸‹ä¸€ä¸ªå­—ç¬¦getchar()
-    æ‰“å°è¾“å…¥æµçš„ä¸‹ä¸€ä¸ªå­—ç¬¦putchar(int)
-    EOFä¸ºä¸ä¸ä»»ä½•charå€¼ç›¸åŒçš„æ•´æ•°å‹ï¼Œä½¿ç”¨intæ¥ä¿è¯è¾“å…¥çš„ä»»ä½•å€¼
+    »ñÈ¡ÊäÈëÁ÷µÄÏÂÒ»¸ö×Ö·ûgetchar()
+    ´òÓ¡ÊäÈëÁ÷µÄÏÂÒ»¸ö×Ö·ûputchar(int)
+    EOFÎª²»ÓëÈÎºÎcharÖµÏàÍ¬µÄÕûÊıĞÍ£¬Ê¹ÓÃintÀ´±£Ö¤ÊäÈëµÄÈÎºÎÖµ
 */
-//è¿”å›è¾“å…¥ä¸­çš„å•æ¬¡æ•°ï¼Œæ¢è¡Œæ•°å’Œç©ºæ ¼æ•°
+//·µ»ØÊäÈëÖĞµÄµ¥´ÎÊı£¬»»ĞĞÊıºÍ¿Õ¸ñÊı
 void wordCount(){
     int input,word = 0,space = 0,enter = 0,state = OUT;
     while ((input = getchar()) != EOF)
@@ -27,7 +27,7 @@ void wordCount(){
     }
     printf("word count:%d;enter count:%d;space count:%d\n",word,enter,space);
 }
-//è¿”å›è¾“å…¥ä¸­å•ä¸ªæ•°å­—å‡ºç°çš„é¢‘æ•°
+//·µ»ØÊäÈëÖĞµ¥¸öÊı×Ö³öÏÖµÄÆµÊı
 void numCount(){
     int input,state = OUT;
     char num[10] = {0};
@@ -46,7 +46,7 @@ void numCount(){
     }
     
 }
-//è¿”å›è¾“å…¥ä¸­
+//·µ»ØÊäÈëÖĞ
 int getLineLength(char * in,int maxlen){
     int input,i = 0;
     while ((input = getchar()) != EOF && input != '\n' && i < maxlen){
@@ -56,7 +56,7 @@ int getLineLength(char * in,int maxlen){
     in[i] = '\0';
     return i;
 }
-//å¤åˆ¶å­—ç¬¦ä¸²
+//¸´ÖÆ×Ö·û´®
 void copyInput(char *from, char *to,int len){
     for(int i = 0; i < len;i++){
         to[i] = from[i];

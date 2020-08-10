@@ -4,7 +4,7 @@
     #include "util.h"
 #endif
 /*
-    ç§»ä½è¿ç®—ç¬¦ï¼š&,|,^,<<,>>,~
+    ÒÆÎ»ÔËËã·û£º&,|,^,<<,>>,~
 */
 int main(int argc, char *argv[]){
     printBit(129);

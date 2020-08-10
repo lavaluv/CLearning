@@ -7,7 +7,7 @@
 /*
 
 */
-//æ‰“å°è¾“å…¥ä¸­æœ€é•¿çš„è¡Œï¼Œä»¥åŠé•¿åº¦
+//´òÓ¡ÊäÈëÖĞ×î³¤µÄĞĞ£¬ÒÔ¼°³¤¶È
 void printMaxLine(){
     char maxline[MAXLEN],input[MAXLEN];
     int len = 0,max = 0;
@@ -21,7 +21,7 @@ void printMaxLine(){
     }
     printf("The maxline is:%s,length is:%d\n",maxline,max);
 }
-//è¾“å‡ºæ•´æ•°çš„äºŒè¿›åˆ¶å½¢å¼
+//Êä³öÕûÊıµÄ¶ş½øÖÆĞÎÊ½
 void printBit(int in){
     char num[32] = {0};
     int i;
@@ -34,7 +34,7 @@ void printBit(int in){
     reverse(out);
     printf("The hex string is: %s\n",out);
 }
-//ç¿»è½¬å­—ç¬¦ä¸²
+//·­×ª×Ö·û´®
 void reverse(char *str){
     char temp;
     size_t i = 0,j = strlen(str) - 1;
@@ -45,7 +45,7 @@ void reverse(char *str){
         str[i] = temp;
     }
 }
-//å»é™¤å­—ç¬¦ä¸²å¤´å°¾çš„ç©ºæ ¼ï¼Œåˆ¶è¡¨ç¬¦å’Œæ¢è¡Œç¬¦
+//È¥³ı×Ö·û´®Í·Î²µÄ¿Õ¸ñ£¬ÖÆ±í·ûºÍ»»ĞĞ·û
 char * trim(char *str){
     int head = 0,tail = 0;
     size_t i = 0,j = 0;
