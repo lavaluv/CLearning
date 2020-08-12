@@ -40,7 +40,7 @@ void numCount(){
             state = IN;
         }
     }
-    for (size_t i = 0; i < 10; i++)
+    for (int i = 0; i < 10; i++)
     {
         printf("number %d's count is:%d\n",i,num[i]);
     }

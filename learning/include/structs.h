@@ -3,7 +3,7 @@
     #include <stdio.h>
     #define __STRUCTS__
     #define PNODE_TYPE int
-    #define BINARY_TREE_TYPE int
+    #define BINARY_TREE_TYPE char
     struct pNode{
         PNODE_TYPE value;
         struct pNode * next;
@@ -15,9 +15,11 @@
     };
     int addPNode(PNODE_TYPE in,struct pNode *node);
     void printPNode(struct pNode *in);
-    struct binaryTree{
-        BINARY_TREE_TYPE value;
-        struct binaryTree * right;
-        struct binaryTree * left;
-    };
+    typedef struct binaryTree{
+        struct binaryTree *right;
+        struct binaryTree *left;
+        char var;
+    }BTree;
+    BTree *getBinaryTreeFrontOutput(char *,char *,int,int,int);
+    void printBinaryTreeFrontOutput(BTree *);
 #endif
