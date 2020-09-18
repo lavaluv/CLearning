@@ -7,6 +7,7 @@ static int totalNum = 0;
 void stackOutputNum(int,int,int,int);
 long easyStackOutputNum(int num);
 int outNum(int[],int len);
+char *MyStrcat(char dstStr[],char srcStr[]);
 int main(int argc, char **argv){
     // char mid[9],rear[9];
     // int i = 0;
@@ -32,9 +33,48 @@ int main(int argc, char **argv){
     // //stackOutputNum(0,0,0,num);
     // printf("%ld",easyStackOutputNum(num));
 
-    int a,b,c;
-    scanf("%d %d %d",&a,&b,&c);
-    printf("%d %.2f",a+b+c,((float)a+b+c)/3);
+    // int i = 0,isSwap = 0;
+    // char in;
+    // char src[20] = {0},dest[20] = {0};
+    // while((in = getchar()) != EOF){
+    //     if(in != ' ' && isSwap == 0){
+    //         src[i] = in;
+    //         i++;
+    //     }
+    //     else if(in != ' ' && isSwap == 1){
+    //         dest[i] = in;
+    //         i++;
+    //     }
+    //     else if(in == ' ' && isSwap == 0){
+    //         i =  0;
+    //         isSwap = 1;
+    //     }        
+    // }
+    // char *out = MyStrcat(src,dest);
+    // printf("%s",out);
+    // free(out);
+    int *i = malloc(sizeof(int));
+    *i = 1;
+    free(i);
+    printf("%d",*i);
+}
+
+char *MyStrcat(char dstStr[],char srcStr[]){
+    int srcLen = strlen(srcStr);
+    int destLen = strlen(dstStr);
+    int i = 0;
+    char *out = (char *)malloc(sizeof(char)*(destLen + srcLen + 1));
+    while (i < srcLen + destLen){
+        if(i < destLen){
+            out[i] = dstStr[i];
+        }
+        else{
+            out[i] = srcStr[i - destLen];
+        }
+        i++;
+    }
+    out[i] = '\0';
+    return out;
 }
 int outNum(int in[],int len){
     int i = 0,up = 0,temp = 0,turnLeft = 0,tempResult = 0;
