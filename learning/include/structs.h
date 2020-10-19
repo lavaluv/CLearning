@@ -4,7 +4,7 @@
     #define __STRUCTS__
     #define PNODE_TYPE int
     #define BINARY_TREE_TYPE char
-    #define STACK_TYPE char
+    #define STACK_TYPE int
     #define MAP_KEY_TYPE char
     #define MAP_VALUE_TYPE int
     struct pNode{
@@ -35,7 +35,8 @@
     STACK *createStack(int len, STACK *stack);
     unsigned char push(STACK_TYPE in, STACK *stack);
     STACK_TYPE pop(STACK *stack);
-
+    STACK_TYPE getTop(STACK * stack);
+    void deleteStack(STACK *stack);
     typedef struct map{
 
     }MAP;

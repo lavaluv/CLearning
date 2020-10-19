@@ -81,10 +81,11 @@ void printBinaryTreeFrontOutput(BTree *tree){
 }
 STACK *createStack(int len, STACK *stack){
     if(stack == NULL){
-        stack = (STACK *)malloc(sizeof(STACK)*len);
+        stack = (STACK *)malloc(sizeof(STACK));
         if(stack != NULL){
             stack->len = 0;
             stack->maxLen = len;
+            stack->var = (STACK_TYPE *)malloc(sizeof(STACK_TYPE)*len);
             return stack;
         }
         else{
@@ -97,10 +98,18 @@ STACK *createStack(int len, STACK *stack){
         return stack;
     }
 }
+void deleteStack(STACK *stack){
+    if(stack != NULL)
+    {
+        free(stack->var);
+        free(stack);
+        stack = NULL;
+    }
+}
 unsigned char push(STACK_TYPE in, STACK *stack){
     if (stack != NULL){
         if (stack->maxLen > stack->len){
-            stack->var[stack->len+1] = in;
+            stack->var[stack->len] = in;
             stack->len += 1;
             return 1;
         }
@@ -119,6 +128,22 @@ STACK_TYPE pop(STACK *stack){
         if (stack->len != 0){
             stack->len -= 1;
             return stack->var[stack->len];
+        }
+        else {
+            //error
+            return 0;
+        }
+    }
+    else {
+        //error
+        return 0;
+    }
+}
+STACK_TYPE getTop(STACK *stack)
+{
+    if (stack != NULL){
+        if (stack->len != 0){
+            return stack->var[stack->len - 1];
         }
         else {
             //error

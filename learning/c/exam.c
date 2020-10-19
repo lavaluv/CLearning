@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <math.h>
 #include <string.h>
+#include "structs.h"
 //#include "structs.h"
 static int totalNum = 0;
 void stackOutputNum(int,int,int,int);
@@ -53,10 +54,64 @@ int main(int argc, char **argv){
     // char *out = MyStrcat(src,dest);
     // printf("%s",out);
     // free(out);
-    int *i = malloc(sizeof(int));
-    *i = 1;
-    free(i);
-    printf("%d",*i);
+    int line = 0;
+    int times = 0;
+    int num = 0;
+    char isNum = 0;
+    char in = 0;
+    STACK *myStack = NULL;
+    while((in = getchar()) != EOF){
+        if(in == '0' && isNum == 0)
+        {
+            break;
+        }
+        if(in >= '0' && in <= '9' && line == 0)
+        {
+            line = in - 48;
+            times = line;
+            myStack = createStack(line,myStack);
+        }
+        else if(in == 'P')
+        {
+            isNum = 1;
+        }
+        else if(in == 'O')
+        {
+            if(myStack->len != 0)
+            {
+                pop(myStack);
+            }
+            times--;
+        }
+        else if(in == 'A'){
+            if(myStack->len != 0)
+            {
+                printf("%d\n",getTop(myStack));
+            }
+            else{
+                printf("E\n");
+            }
+            times--;
+        }
+        else if(isNum == 1 && in >= '0' && in <= '9'){
+            num = num * 10 + (in - 48);
+        }
+        else if(isNum == 1 && in == '\n'){
+            push(num,myStack);
+            times--;
+            isNum = 0;
+            num = 0;
+        }
+        if(times == 0)
+        {
+            if(myStack != NULL)
+            {
+                deleteStack(myStack);
+                myStack = NULL;
+            }
+            line = 0;
+        }
+    }
 }
 
 char *MyStrcat(char dstStr[],char srcStr[]){
