@@ -1,0 +1,124 @@
+<ManagedElement xmlns="urn:zte:params:xml:ns:yang:ran:ManagedElement"
+    xmlns:ManagedElement="urn:zte:params:xml:ns:yang:ran:ManagedElement"
+    xmlns:TransportNetwork="urn:zte:params:xml:ns:yang:ran:TransportNetwork"
+    xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0">
+    <moId>temp</moId>
+    <userLabel>ManagedElement</userLabel>
+    <managedElementType>ITBBU</managedElementType>
+    <productType>2</productType>
+    <swVersion>2.0</swVersion>
+    <mimVersion>V2.20.03.00B87-2e</mimVersion>
+    <mimType>ITRAN-PNF</mimType>
+
+
+    <Equipment xmlns="urn:zte:params:xml:ns:yang:ran:Equipment">
+        <moId>1</moId>
+        <userLabel>equipment</userLabel>
+        <SubRack>
+            <moId>1</moId>
+            <subRackNo>1</subRackNo>
+            <subRackType>0</subRackType>
+        </SubRack>
+        <ReplaceableUnit>
+            <moId>CCG_1_2</moId>
+            <refSubRack>Equipment=1,SubRack=1</refSubRack>
+            <slotNo>2</slotNo>
+            <name>CCG0</name>
+            <hwWorkScence>0</hwWorkScence>
+            <functionMode>0</functionMode>
+            <TnPort>
+                <moId>ETH0</moId>
+                <isEnable>1</isEnable>
+                <phyPortType>2</phyPortType>
+                <portRate>255</portRate>
+                <rateNegotiationSwitch>1</rateNegotiationSwitch>
+                <workMode>2</workMode>
+                <isIsolate>0</isIsolate>
+            </TnPort>
+            <TnPort>
+                <moId>ETH1</moId>
+                <isEnable>1</isEnable>
+                <phyPortType>0</phyPortType>
+                <portRate>10G</portRate>
+                <rateNegotiationSwitch>1</rateNegotiationSwitch>
+                <workMode>0</workMode>
+                <isIsolate>0</isIsolate>
+            </TnPort>
+            <TnPort>
+                <moId>ETH2</moId>
+                <isEnable>1</isEnable>
+                <phyPortType>0</phyPortType>
+                <portRate>10G</portRate>
+                <rateNegotiationSwitch>1</rateNegotiationSwitch>
+                <workMode>0</workMode>
+                <isIsolate>0</isIsolate>
+            </TnPort>
+            <TnPort>
+                <moId>ETH3</moId>
+                <isEnable>1</isEnable>
+                <phyPortType>0</phyPortType>
+                <portRate>10G</portRate>
+                <rateNegotiationSwitch>1</rateNegotiationSwitch>
+                <workMode>0</workMode>
+                <isIsolate>0</isIsolate>
+            </TnPort>
+        </ReplaceableUnit>
+    </Equipment>
+
+    <TransportNetwork xmlns="urn:zte:params:xml:ns:yang:ran:TransportNetwork">
+        <moId>1</moId>
+        <EthernetInterface>
+            <moId>0</moId>
+            <bandwidth>10000</bandwidth>
+            <transmitBandwidth>10000</transmitBandwidth>
+            <mtu>1500</mtu>
+        </EthernetInterface>
+        <Interface>
+            <moId>0</moId>
+            <loopbackFlag>0</loopbackFlag>
+            <refEthernetInterface>TransportNetwork=1,EthernetInterface=0</refEthernetInterface>
+        </Interface>
+        <Ip>
+            <moId>24</moId>
+            <ipAddress>50.4.22.94</ipAddress>
+            <prefixLength>16</prefixLength>
+            <gatewayIp>50.4.1.1</gatewayIp>
+            <refInterface>TransportNetwork=1,Interface=0</refInterface>
+        </Ip>
+    </TransportNetwork>
+    
+    <SystemFunctions xmlns="urn:zte:params:xml:ns:yang:ran:ManagedElement">
+        <AccessM xmlns="urn:zte:params:xml:ns:yang:ran:AccessM">
+            <moId>1</moId>
+            <OamChannel xmlns="urn:zte:params:xml:ns:yang:ran:TransportNetwork">
+                <moId>0</moId>
+                <refIp>TransportNetwork=1,Ip=24</refIp>
+                <serverIp>10.226.207.232</serverIp>
+                <prefixLength>8</prefixLength>
+                <dscp>48</dscp>
+            </OamChannel>
+        </AccessM>
+        <SecM xmlns="urn:zte:params:xml:ns:yang:ran:SecM">
+            <moId>1</moId>
+            <targetType>ITBBU</targetType>
+            <AuthenticationM>
+                <moId>1</moId>
+                <LocalUserM>
+                    <moId>1</moId>
+                    <LocalUser>
+                        <moId>4</moId>
+                        <userName>itran</userName>
+                        <userGroup>0</userGroup>
+                        <password>$5$mJtxPuig3WI_PTk$T1GjeqZncb2d.8D6.x0V.6VLGC7Rfx3xsDrIuxCfNP1</password>
+                    </LocalUser>
+                </LocalUserM>
+            </AuthenticationM>
+        </SecM>
+        <PnpPolicy xmlns="urn:zte:params:xml:ns:yang:ran:BSA">
+            <moId>1</moId>
+            <pnpAtfirstStart>true</pnpAtfirstStart>
+            <pnpWaitingseconds>600</pnpWaitingseconds>
+            <pnpSelfLinkOnseconds>1800</pnpSelfLinkOnseconds>
+        </PnpPolicy>
+    </SystemFunctions>
+ </ManagedElement>
