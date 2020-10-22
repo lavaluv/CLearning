@@ -15,10 +15,15 @@ class FiveTuple:
     def getFiveTupleString(self):
         return self.srcIp+'_'+self.srcPort+'_'+self.destIp+'_'+self.destPort+'_'+self.prot
 def constructShellCMD(FiveTupleInput):
+    display_filter = 'ip.src=='+FiveTupleInput.srcIp+',ip.dst=='+FiveTupleInput.destPort+','+FiveTupleInput.prot+'.port in {'+FiveTupleInput.srcPort+' '+FiveTupleInput.destPort+'}'
     return ''
+def getFiveTupleByString(FTString):
+    five_tuple = FTString.split('_')
+    return FiveTuple(five_tuple[0],five_tuple[1],five_tuple[2],five_tuple[3],five_tuple[4])
 try:
     file_name = os.listdir(root)
     file_list = [os.path.join(root,files) for files in file_name]
+    # pcap = open()
     for filePath in file_list:
         try:
             xmlObject = ET.parse(filePath)
